@@ -1,15 +1,36 @@
 # .github/workflows/keep_alive.yml
-name: Keep Streamlit App Alive
+name: Keep Multiple Streamlit Apps Alive
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Runs every 6 hours
-  workflow_dispatch:
+    # Runs every 8 hours (adjust as needed)
+    - cron: '0 */8 * * *'
+  workflow_dispatch: # Allows manual trigger from the Actions tab
 
 jobs:
-  ping:
+  wake-apps:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # Prevents one failing app from stopping others
+      matrix:
+        app-url:
+          - "https://jbpnqsmkdkrwgejshyhukx.streamlit.app/"
+          - "https://fitnessappbysg.streamlit.app/"
     steps:
-      - name: Send HTTP Ping
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Playwright and dependencies
         run: |
-          curl -s -L "https://YOUR-APP-NAME.streamlit.app" > /dev/null
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Ping and Wake App
+        run: |
+          python wake_apps.py "${{ matrix.app-url }}"
