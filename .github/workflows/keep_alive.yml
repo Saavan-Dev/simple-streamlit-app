@@ -16,6 +16,7 @@ jobs:
         app-url:
           - "https://jbpnqsmkdkrwgejshyhukx.streamlit.app/"
           - "https://fitnessappbysg.streamlit.app/"
+          - "https://webscrapingwiki.streamlit.app/"
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
