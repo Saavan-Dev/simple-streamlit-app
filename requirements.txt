@@ -13,3 +13,4 @@ python-pptx
 openpyxl
 chardet
 pytesseract
+opencv-python-headless
