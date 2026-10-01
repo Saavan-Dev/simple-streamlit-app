@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v6        # ✅ Node 24
 
       - name: Set up Python
-        uses: actions/setup-python@v6    # ✅ Node 24
+        uses: actions/setup-python@v7    # ✅ Node 24
         with:
           python-version: "3.11"
           cache: "pip"
