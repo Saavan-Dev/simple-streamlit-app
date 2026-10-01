@@ -34,16 +34,20 @@ def app_name(url):
     return subdomain.replace("-", " ").replace("_", " ").title()
 
 
+KEEP_ALIVE_BADGE = ("[![Keep alive](https://github.com/Saavan-Dev/simple-streamlit-app/actions/"
+                    "workflows/keep_alive.yml/badge.svg)](https://github.com/Saavan-Dev/"
+                    "simple-streamlit-app/actions/workflows/keep_alive.yml)")
+OPEN_BADGE = "https://static.streamlit.io/badges/streamlit_badge_black_white.svg"
+
+
 def build_table(urls):
-    rows = ["| # | App | Link | Status |", "|---|---|---|---|"]
-    for i, url in enumerate(urls, 1):              # enumerate(..., 1) counts from 1
-        badge = (f"![status](https://img.shields.io/website?url={quote(url, safe='')}"
-                 "&label=&up_message=online&down_message=offline)")
-        rows.append(f"| {i} | {app_name(url)} | [{url}]({url}) | {badge} |")
+    rows = [KEEP_ALIVE_BADGE, "",                       # one status badge for all apps
+            "| # | App | Link | Open |", "|---|---|---|---|"]
+    for i, url in enumerate(urls, 1):
+        rows.append(f"| {i} | {app_name(url)} | [{url}]({url}) | [![Open in Streamlit]({OPEN_BADGE})]({url}) |")
     if not urls:
         rows.append("| – | No apps listed yet | – | – |")
     return "\n".join(rows)
-
 
 def main():
     urls = read_urls()
