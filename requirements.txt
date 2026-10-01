@@ -3,3 +3,13 @@ requests
 beautifulsoup4
 wikipedia
 gtts
+pandas
+numpy
+matplotlib
+pillow
+pymupdf
+python-docx
+python-pptx
+openpyxl
+chardet
+pytesseract
