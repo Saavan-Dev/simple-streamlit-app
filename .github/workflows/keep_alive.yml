@@ -22,7 +22,7 @@ jobs:
           - "https://universalfileviewer.streamlit.app/"
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6        # ✅ Node 24
+        uses: actions/checkout@v7        # ✅ Node 24
 
       - name: Set up Python
         uses: actions/setup-python@v6    # ✅ Node 24
