@@ -15,7 +15,7 @@ jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6        # ✅ Node 24
+      - uses: actions/checkout@v7        # ✅ Node 24
 
       - uses: actions/setup-python@v7    # ✅ Node 24
         with:
