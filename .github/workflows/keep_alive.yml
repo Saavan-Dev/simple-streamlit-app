@@ -19,6 +19,7 @@ jobs:
           - "https://webscrapingwiki.streamlit.app/"
           - "https://expensetrackerapp.streamlit.app/"
           - "https://movieticketapp.streamlit.app/"
+          - "https://universalfileviewer.streamlit.app/"
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
