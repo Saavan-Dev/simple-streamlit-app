@@ -4,7 +4,7 @@ name: Keep Multiple Streamlit Apps Alive
 on:
   schedule:
     # Runs every 8 hours (adjust as needed)
-    - cron: '0 */8 * * *'
+    - cron: '0 */6 * * *'   # every 6h gives more margin, since GitHub can delay scheduled runs
   workflow_dispatch: # Allows manual trigger from the Actions tab
 
 jobs:
@@ -36,5 +36,11 @@ jobs:
           playwright install chromium --with-deps
 
       - name: Ping and Wake App
-        run: |
-          python wake_apps.py "${{ matrix.app-url }}"
+        run: python wake_apps.py "${{ matrix.app-url }}"
+
+      - name: Upload screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-${{ strategy.job-index }}
+          path: screenshot.png
