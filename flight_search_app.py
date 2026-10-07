@@ -2,10 +2,17 @@ import streamlit as st
 import requests
 import json
 from datetime import datetime
-
-
 from sqlalchemy import create_engine, URL
 import pymysql
+
+# Fetch secrets directly from Streamlit configuration
+API_KEY = st.secrets["API_KEY"]
+
+DRIVERNAME = st.secrets["DRIVERNAME"]
+USERNAME = st.secrets["USERNAME"]
+PASSWORD = st.secrets["PASSWORD"]
+HOSTNAME = st.secrets["HOSTNAME"]
+DATABASE = st.secrets["DATABASE"]
 
 db_url = URL.create(
     drivername = DRIVERNAME,
