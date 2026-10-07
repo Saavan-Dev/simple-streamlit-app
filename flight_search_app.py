@@ -8,11 +8,11 @@ from sqlalchemy import create_engine, URL
 import pymysql
 
 db_url = URL.create(
-    drivername="mysql+pymysql",
-    username="root",
-    password="Admin@123",
-    host="localhost",
-    database="flight_app3"
+    drivername = DRIVER_NAME,
+    username = USER_NAME,
+    password = PASSWORD,
+    host = HOST_NAME,
+    database = DATABASE
 )
 
 engine = create_engine(
