@@ -14,3 +14,4 @@ openpyxl
 chardet
 pytesseract
 opencv-python-headless
+sqlalchemy
