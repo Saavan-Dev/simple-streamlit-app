@@ -8,10 +8,10 @@ from sqlalchemy import create_engine, URL
 import pymysql
 
 db_url = URL.create(
-    drivername = DRIVER_NAME,
-    username = USER_NAME,
+    drivername = DRIVERNAME,
+    username = USERNAME,
     password = PASSWORD,
-    host = HOST_NAME,
+    host = HOSTNAME,
     database = DATABASE
 )
 
