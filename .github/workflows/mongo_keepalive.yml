@@ -1,0 +1,30 @@
+name: MongoDB keep-alive
+
+on:
+  schedule:
+    - cron: "0 6 * * 1,4"   # Monday and Thursday, 06:00 UTC
+  workflow_dispatch:         # manual "Run workflow" button
+
+jobs:
+  ping-mongo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pymongo
+
+      - name: Ping Cluster0
+        run: python mongo_keepalive.py
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+
+      # If you ever add a second cluster, add a MONGO_URI_2 secret
+      # and uncomment these lines:
+      # - name: Ping second cluster
+      #   run: python mongo_keepalive.py
+      #   env:
+      #     MONGO_URI: ${{ secrets.MONGO_URI_2 }}
