@@ -9,8 +9,8 @@ jobs:
   ping-db:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7 #latest node version
+      - uses: actions/setup-python@v7 #latest node version
         with: { python-version: "3.12" }
       - run: pip install sqlalchemy pymysql
       - run: python db_keepalive.py
