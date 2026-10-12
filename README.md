@@ -15,4 +15,5 @@ Streamlit apps built while learning Python.
 | 4 | Expensetrackerapp | [https://expensetrackerapp.streamlit.app](https://expensetrackerapp.streamlit.app) | [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://expensetrackerapp.streamlit.app) |
 | 5 | Movieticketapp | [https://movieticketapp.streamlit.app](https://movieticketapp.streamlit.app) | [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://movieticketapp.streamlit.app) |
 | 6 | Universalfileviewer | [https://universalfileviewer.streamlit.app](https://universalfileviewer.streamlit.app) | [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://universalfileviewer.streamlit.app) |
+| 7 | Flight Search App | [https://flight-search-app.streamlit.app](https://flight-search-app.streamlit.app) | [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://flight-search-app.streamlit.app) |
 <!-- APPS:END -->
