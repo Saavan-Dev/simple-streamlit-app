@@ -20,6 +20,7 @@ jobs:
           - "https://expensetrackerapp.streamlit.app/"
           - "https://movieticketapp.streamlit.app/"
           - "https://universalfileviewer.streamlit.app/"
+          - "https://flight-search-app.streamlit.app/"
     steps:
       - name: Check out repository
         uses: actions/checkout@v7        # ✅ Node 24
